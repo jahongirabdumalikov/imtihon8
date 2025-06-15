@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/config.json",
+      "destination": "/config.json"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
