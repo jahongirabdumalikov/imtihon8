@@ -1,26 +1,17 @@
 import { useMenu } from "@/store/isMenu";
-import { CalendarFold, Heart, House, Menu, Sun, Moon } from "lucide-react";
+import { CalendarFold, Heart, House, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-import { useTheme } from "@/store/useThem";
 import { useAuth } from "@/store/useAuth";
 
 import { useUserStore } from "@/store/userData";
 
 const Header = () => {
-  const [, setLang] = useState<string>("uz");
   const { t, i18n } = useTranslation();
   const { isOpen, toggleMenu } = useMenu();
-  console.log(isOpen);
-  const {} = useTheme();
-  const navigate = useNavigate();
 
-  const changeLang = (lang: string) => {
-    setLang(lang);
-    i18n.changeLanguage(lang);
-  };
   const { user } = useUserStore();
 
   const { accessToken } = useAuth();
